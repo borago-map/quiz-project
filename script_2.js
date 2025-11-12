@@ -1,65 +1,30 @@
 // ------------------------------------------------------------------
-// ★ 1. 이 퀴즈의 제목을 여기에 입력하세요. (시트에 기록될 이름)
-const LESSON_TITLE = "1차시: 지질시대의 환경과 생물"; 
+// ★ 1. [2차시 퀴즈 제목]을 여기에 입력하세요. (시트에 기록될 이름)
+// ------------------------------------------------------------------
+const LESSON_TITLE = "2차시: [자연선택과 생물의 진화]";
+// ------------------------------------------------------------------
+
+
+// ------------------------------------------------------------------
+// ★ 2. [2차시 퀴즈 JSON 데이터]를 여기에 붙여넣으세요.
 // ------------------------------------------------------------------
 const quizData = [
   {
-    "question": "문제 1. 지질 시대를 선캄브리아시대, 고생대, 중생대, 신생대로 구분하는 주된 기준은 무엇인가요?",
-    "options": [
-      "대륙의 이동과 판게아의 형성",
-      "기후 변화와 빙하기의 도래",
-      "지층에서 발견되는 화석의 급격한 변화",
-      "대규모 화산 활동의 발생 시기"
-    ],
-    "correctAnswer": 2,
-    "explanation": "풀이: 지층에 드러난 화석의 종류와 수를 관찰할 때 특정 시기에 급격한 변화가 나타나며, 이것은 생물의 서식 환경이 크게 변했다는 것을 의미합니다. 따라서 화석에 드러난 지구 환경의 변화를 기준으로 지질 시대를 구분합니다."
+    "question": "문제 1. 2차시 첫 번째 질문입니다.",
+    "options": ["보기 1", "보기 2", "보기 3", "보기 4"],
+    "correctAnswer": 0,
+    "explanation": "풀이: 2차시 퀴즈의 첫 번째 풀이입니다."
   },
   {
-    "question": "문제 2. 고생대에 생물이 육지로 진출할 수 있었던 가장 결정적인 환경 변화는 무엇인가요?",
-    "options": [
-      "대륙이 합쳐져 판게아가 형성되었다.",
-      "대기 중 산소 농도가 높아져 오존층이 형성되었다.",
-      "껍데기나 뼈를 가진 생물이 출현했다.",
-      "기후가 온난해지고 습지가 넓게 분포했다."
-    ],
+    "question": "문제 2. 2차시 두 번째 질문입니다.",
+    "options": ["보기 1", "보기 2", "보기 3", "보기 4"],
     "correctAnswer": 1,
-    "explanation": "풀이: 고생대에는 대기 중 산소의 농도가 높아지면서 오존층이 생겨났고, 이 오존층이 (태양의) 자외선을 차단하여 생물이 육지로 진출할 수 있게 되었습니다."
-  },
-  {
-    "question": "문제 3. 다음 중 중생대의 환경과 생물에 대한 설명으로 옳은 것은 무엇인가요?",
-    "options": [
-      "최초의 단세포생물이 바다에서 출현하였다.",
-      "빙하기와 간빙기가 반복되며 매머드가 번성하였다.",
-      "삼엽충과 어류가 바다에서 번성하였다.",
-      "육지에서는 공룡, 식물은 겉씨식물이 번성하였다."
-    ],
-    "correctAnswer": 3,
-    "explanation": "풀이: 중생대에는 육지에서 대형 파충류인 공룡이 크게 번성하였고, 은행류나 소철류 같은 겉씨식물이 번성하였습니다. (1번은 선캄브리아시대, 2번은 신생대, 3번은 고생대에 해당합니다.)"
-  },
-  {
-    "question": "문제 4. 지질 시대의 대부분(약 88%)을 차지하며, 화석이 거의 발견되지 않고 스트로마톨라이트 등이 발견되는 시대는 언제인가요?",
-    "options": [
-      "선캄브리아시대",
-      "고생대",
-      "중생대",
-      "신생대"
-    ],
-    "correctAnswer": 0,
-    "explanation": "풀이: 화석이 거의 발견되지 않는 선캄브리아시대는 지질 시대의 대부분(약 88.3%)을 차지하며, 이 시기 화석으로는 스트로마톨라이트나 에디아카라 생물군 화석 정도가 발견됩니다."
-  },
-  {
-    "question": "문제 5. 공룡과 암모나이트가 멸종한 중생대 말의 대멸종 이후, 그 빈자리를 차지하여 급격하게 번성한 동물 무리는 무엇인가요?",
-    "options": [
-      "포유류",
-      "양서류",
-      "어류",
-      "곤충류"
-    ],
-    "correctAnswer": 0,
-    "explanation": "풀이: 중생대 말 급격한 환경 변화로 공룡 등이 멸종하였고, 공룡이 멸종한 뒤 포유류가 그 빈자리를 차지하여 번성하였습니다."
+    "explanation": "풀이: 2차시 퀴즈의 두 번째 풀이입니다."
   }
+  // (여기에 2차시 퀴즈 문제를 5개 또는 10개 붙여넣으세요)
 ];
 // ------------------------------------------------------------------
+
 
 // ------------------------------------------------------------------
 // ★ 3. Google Apps Script URL (1차시와 동일, 수정 불필요)
@@ -104,10 +69,8 @@ function loadQuestion(index) {
         optionsContainer.appendChild(button);
     });
     
-    // [개선됨] 진행률 업데이트
-    if (progressIndicator) {
-        progressIndicator.textContent = `${index + 1}/${quizData.length}`;
-    }
+    // 진행률 업데이트 (예: "1/5")
+    progressIndicator.textContent = `${index + 1}/${quizData.length}`;
     
     updateNavigation();
     
@@ -162,7 +125,6 @@ function showFeedback(selectedIndex, isReview) {
 // 네비게이션 버튼 업데이트
 function updateNavigation() {
     prevBtn.disabled = currentQuestionIndex === 0;
-    // [개선됨] 이미지 레이아웃에 맞게 "다음"으로 수정
     nextBtn.textContent = (currentQuestionIndex === quizData.length - 1) ? "결과 보기" : "다음";
 }
 
@@ -229,15 +191,13 @@ function submitResult() {
     submitBtn.disabled = true;
     submitStatus.textContent = '전송 중...';
 
-    // [수정됨] 깨졌던 'data' 객체 선언을 수정했습니다.
     const data = {
         studentId: studentId,
         studentName: studentName,
         score: scorePercentage,
-        lesson: LESSON_TITLE // 1차시 제목이 함께 전송됩니다.
+        lesson: LESSON_TITLE // ★ 2차시 제목이 함께 전송됩니다.
     };
 
-    // [수정됨] 'fetch' 코드를 'data' 객체 선언과 분리했습니다.
     fetch(GOOGLE_APPS_SCRIPT_URL, {
         method: 'POST',
         cache: 'no-cache',
@@ -263,15 +223,14 @@ function submitResult() {
         submitBtn.disabled = false;
         console.error('Error:', error);
     });
-} // [수정됨] submitResult 함수의 닫는 괄호
+}
 
-// [수정됨] 퀴즈 제목/진행률 표시 및 첫 문제 로드
+// 첫 문제 로드 및 퀴즈 제목 설정
 window.onload = () => {
     // 퀴즈 제목 표시
     if (lessonTitleDisplay) {
         lessonTitleDisplay.textContent = LESSON_TITLE;
     }
-    // 첫 문제 로드 (진행률 포함)
+    // 첫 문제 로드
     loadQuestion(0);
 };
-// [수정됨] 파일 끝에 있던 불필요한 '}' 괄호를 삭제했습니다.
