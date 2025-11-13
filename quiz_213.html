@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대화형 웹 퀴즈 (213)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="quiz-container">
+        <header class="quiz-header">
+            <div class="header-title">
+                <h1 id="lesson-title-display">퀴즈 로딩 중...</h1>
+                <p>213: 온실효과와 지구온난화</p>
+            </div>
+            <div class="header-icons">
+                <span></span> 
+            </div>
+        </header>
+
+        <p id="progress-indicator">0/0</p>
+
+        <h2 id="question">질문이 여기에 표시됩니다.</h2>
+
+        <div id="options-container">
+        </div>
+
+        <div id="short-answer-container" class="input-container-hidden">
+            <input type="text" id="short-answer-input" placeholder="정답을 입력하세요...">
+            <button id="short-answer-btn" onclick="checkShortAnswer()">정답 확인</button>
+        </div>
+
+        <div id="writing-container" class="input-container-hidden">
+            <textarea id="writing-textarea" placeholder="논제에 대한 자신의 주장을 CEI 구조로 서술하세요..."></textarea>
+        </div>
+
+        <div id="feedback" class="feedback-hidden">
+            <p id="feedback-text"></p>
+            <p id="explanation-text"></p>
+        </div>
+        
+        <div class="navigation-buttons">
+            <button id="hint-btn">힌트 ▾</button>
+            <button id="prev-btn" onclick="prevQuestion()">이전 문제</button>
+            <button id="retry-btn" onclick="retryQuiz()">다시 풀기</button>
+            <button id="next-btn" onclick="nextQuestion()">다음</button>
+        </div>
+    </div>
+
+    <div id="result-container" class="result-container-hidden">
+        <h2>퀴즈 결과</h2>
+        <p><span id="total-score">0</span> / <span id="total-scorable">10</span> 점</p>
+        <p>점수: <span id="score-percentage">0</span>%</p>
+        
+        <div class="submission-form">
+            <h3>결과 전송하기</h3>
+            <input type="text" id="student-id" placeholder="학번 (예: 10101)">
+            <input type="text" id="student-name" placeholder="이름 (예: 홍길동)">
+            <button id="submit-btn" onclick="submitResult()">결과 전송</button>
+            <p id="submit-status"></p>
+        </div>
+    </div>
+
+    <script src="script_213.js"></script>
+</body>
+</html>
